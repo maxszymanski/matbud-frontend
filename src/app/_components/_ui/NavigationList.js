@@ -9,7 +9,9 @@ function NavigationList({ data }) {
     const { isNavOpen } = useAppStore()
     const pathname = usePathname()
 
-    const phoneLink = data.contact_info.phone.replace(/[\s()\-]/g, '')
+    // const phoneLink =
+    //     data.contact_info.phone.replace(/[\s()\-]/g, '')
+    const phoneLink = '12345678'
 
     return (
         <div

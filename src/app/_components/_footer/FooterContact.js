@@ -1,7 +1,7 @@
 import { getFooter } from '../../lib/api'
 
 function FooterContact({ data }) {
-    const contact = Object.entries(data.contact_info).splice(1, 4)
+    const contact = Object.entries(data.contact_info).splice(1, 4) || []
 
     return (
         <div className="flex flex-col items-center gap-6 sm:items-start">

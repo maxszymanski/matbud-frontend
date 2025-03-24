@@ -12,7 +12,7 @@ async function LearnSkill() {
                 src="/second-home.webp"
                 height={510}
                 width={674}
-                alt="szcześliwy student"
+                alt="kreskówkowy dom"
                 className="max-h-[500px] max-w-[350px] md:max-h-[720px] md:max-w-[400px] xl:max-h-max xl:max-w-full"
                 priority
             />

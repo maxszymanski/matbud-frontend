@@ -1,6 +1,6 @@
 import Button from './Button'
 
-function ServicesCard({ icon, title, list, slug }) {
+function ServicesCard({ icon, title, list, slug = undefined }) {
     const services =
         Object.values(list).filter((value) => typeof value === 'string') || []
 
@@ -15,13 +15,15 @@ function ServicesCard({ icon, title, list, slug }) {
                     ))}
                 </ul>
             )}
-            <Button
-                href={`/uslugi/${slug}`}
-                variant="orange"
-                restClass="!py-2.5 mx-8"
-            >
-                Szczegóły
-            </Button>
+            {slug && (
+                <Button
+                    href={`/uslugi/${slug}`}
+                    variant="orange"
+                    restClass="!py-2.5 mx-8"
+                >
+                    Szczegóły
+                </Button>
+            )}
         </div>
     )
 }

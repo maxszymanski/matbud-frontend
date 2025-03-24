@@ -11,14 +11,15 @@ const poppins = Poppins({
 
 export const metadata = {
     title: {
-        template: '%s | Matbud',
-        default: 'Matbud',
+        template: 'MatBud | %s',
+        default: 'MatBud',
     },
-    description: 'Firma budowlana',
+    description: 'Firma budowlana MatBud',
 }
 
 export default async function RootLayout({ children }) {
-    const data = await getFooter()
+    // const data = await getFooter()
+    const data = {}
 
     return (
         <html

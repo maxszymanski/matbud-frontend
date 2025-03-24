@@ -8,10 +8,10 @@ async function Footer({ data }) {
         <footer className="bg-primary2 px-6">
             <div className="container mx-auto">
                 <div className="flex flex-col justify-center gap-10 pt-8 pb-6 text-white/80 md:flex-row md:justify-between lg:pt-16">
-                    <FooterSocial data={data} />
+                    {/* <FooterSocial data={data} /> */}
                     <div className="flex w-full flex-wrap justify-center gap-x-20 gap-y-10 md:gap-x-10 lg:justify-evenly">
                         <FooterNav />
-                        <FooterContact data={data} />
+                        {/* <FooterContact data={data} /> */}
                     </div>
                 </div>
                 <div className="flex items-center justify-center gap-6 border-t border-white/20 py-4 text-center text-xs text-white md:gap-10 lg:gap-16">
