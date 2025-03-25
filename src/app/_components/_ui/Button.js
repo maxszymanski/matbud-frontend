@@ -36,7 +36,7 @@ function Button({
             <button
                 value={value}
                 onClick={onClick}
-                className={`${mainClass} ${restClass} ${variantClass}`}
+                className={`${mainClass} ${restClass} ${variantClass} disabled:bg-primary3/70 disabled:cursor-wait`}
                 disabled={disabled}
                 id={id}
             >

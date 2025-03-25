@@ -5,6 +5,8 @@ import Button from '../_ui/Button'
 import Input from '../_ui/Input'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { sendEmail } from '../../lib/actions'
+import { useState } from 'react'
 
 const phoneRegex = new RegExp(
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -25,10 +27,32 @@ function ContactForm() {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm({ resolver: zodResolver(schema) })
+    const [isLoading, setIsLoading] = useState(false)
 
-    const onSubmit = (userData) => {
-        console.log(userData)
+    const onSubmit = async (data) => {
+        setIsLoading(true)
+        // Tworzymy obiekt FormData
+        const formData = new FormData()
+        formData.append('name', data.user_name)
+        formData.append('email', data.user_email)
+        formData.append('phone', data.user_phone)
+        formData.append('message', data.user_message)
+
+        // // Wywołujemy Server Action
+        const response = await sendEmail(formData)
+
+        // Ustawiamy komunikat zwrotny
+
+        if (response.status === 'success') {
+            window.location.href = '/o-nas'
+            alert('Wiadomość została wysłana')
+        } else {
+            window.location.href = '/realizacje'
+        }
+        setIsLoading(false)
+        reset()
     }
 
     return (
@@ -73,8 +97,12 @@ function ContactForm() {
                 error={errors?.user_message || null}
                 message={errors?.user_message?.message || null}
             />
-            <Button variant="orange" restClass="my-4 cursor-pointer">
-                Wyślij
+            <Button
+                variant="orange"
+                restClass="my-4 cursor-pointer"
+                disabled={isLoading}
+            >
+                {isLoading ? 'Wysyłanie...' : 'Wyślij'}
             </Button>
         </form>
     )

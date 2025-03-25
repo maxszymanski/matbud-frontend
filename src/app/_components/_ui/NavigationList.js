@@ -56,7 +56,14 @@ function NavigationList({ data }) {
                 <Button
                     variant="orange"
                     href={`tel:${phoneLink}`}
-                    restClass=" !px-5 !py-2.5 !font-normal !text-sm !md:text-xs !lg:text-sm "
+                    restClass=" !px-5 !py-2.5 !font-normal !text-sm !md:text-xs !lg:text-sm md:hidden"
+                >
+                    Zadzwoń do nas!
+                </Button>
+                <Button
+                    variant="orange"
+                    href="/kontakt"
+                    restClass=" !px-5 !py-2.5 !font-normal !text-sm !md:text-xs !lg:text-sm hidden md:block"
                 >
                     Zadzwoń do nas!
                 </Button>
