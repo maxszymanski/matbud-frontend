@@ -2,20 +2,23 @@ import About from '../_components/_aboutus/About'
 import WhyUs from '../_components/_aboutus/WhyUs'
 import NumberSection from '../_components/_home/NumberSection'
 import MiniHeader from '../_components/_ui/MiniHeader'
+import { getAbout } from '../lib/api'
 
 export const metadata = {
     title: 'O nas',
     description: 'O nas MatBud',
 }
 
-function AboutUs() {
+async function AboutUs() {
+    const about = await getAbout()
+
     return (
         <>
             <MiniHeader title="O nas" />
             <main className="flex-1">
-                <About />
-                <WhyUs />
+                <About about={about.about_info} />
                 <NumberSection />
+                <WhyUs about={about.why_us} />
             </main>
         </>
     )

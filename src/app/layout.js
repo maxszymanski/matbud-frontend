@@ -19,17 +19,16 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
     const data = await getFooter()
-    // const data = {}
 
     return (
         <html
             lang="pl"
-            className="scrollbar-thin scrollbar-track-primary scrollbar-thumb-primary2 overflow-x-hidden"
+            className="scrollbar-thin scrollbar-track-primary scrollbar-thumb-primary3 overflow-x-hidden"
         >
             <body
                 className={`${poppins.className} from-primary to-primary2 relative h-full min-h-screen bg-linear-to-r`}
             >
-                <Navigation data={data} />
+                <Navigation />
                 {children}
                 <Footer data={data} />
             </body>

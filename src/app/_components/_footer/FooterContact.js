@@ -1,5 +1,3 @@
-import { getFooter } from '../../lib/api'
-
 function FooterContact({ data }) {
     const contact = Object.entries(data.contact_info).splice(1, 4) || []
 
@@ -11,7 +9,10 @@ function FooterContact({ data }) {
             <ul className="flex flex-col items-center sm:items-start">
                 {contact.map((link) => {
                     return (
-                        <li key={link[0]}>
+                        <li
+                            key={link[0]}
+                            className={`${link[1] === null ? 'hidden' : ''}`}
+                        >
                             <p className="mb-2 p-2">{link[1]}</p>
                         </li>
                     )

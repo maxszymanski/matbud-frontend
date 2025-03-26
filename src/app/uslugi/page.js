@@ -9,7 +9,7 @@ export const metadata = {
 function ServicesPage() {
     return (
         <>
-            <MiniHeader title="Nasze Usługi" />
+            <MiniHeader title="Usługi" />
             <main className="flex-1">
                 <ServicesSection />
             </main>
