@@ -15,7 +15,7 @@ function AboutUs() {
             <main className="flex-1">
                 <About />
                 <WhyUs />
-                {/* <NumberSection /> */}
+                <NumberSection />
             </main>
         </>
     )

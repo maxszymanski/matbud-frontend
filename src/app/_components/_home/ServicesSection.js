@@ -4,6 +4,7 @@ import { FaHammer, FaHome, FaRegBuilding } from 'react-icons/fa'
 
 async function ServicesSection() {
     const services = await getServices()
+    console.log(services)
 
     return (
         <section className="container mx-auto flex flex-wrap items-stretch justify-center gap-20 px-6 py-18 xl:justify-evenly xl:gap-2 xl:px-2 xl:pt-24 xl:pb-36">
