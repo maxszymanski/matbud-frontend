@@ -6,8 +6,10 @@ import { IoMenu, IoClose } from 'react-icons/io5'
 import Button from './Button'
 import Logo from './Logo'
 import useAppStore from '../../stores/store'
+import { usePathname } from 'next/navigation'
 
-function MobileNav({ pathname }) {
+function MobileNav() {
+    const pathname = usePathname()
     const { isNavOpen, toggleNavigation, closeNavigation } = useAppStore()
 
     useEffect(() => {

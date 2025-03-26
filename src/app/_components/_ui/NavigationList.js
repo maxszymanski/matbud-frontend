@@ -5,11 +5,9 @@ import Button from './Button'
 import useAppStore from '../../stores/store'
 import { usePathname } from 'next/navigation'
 
-function NavigationList({ data }) {
+function NavigationList() {
     const { isNavOpen } = useAppStore()
     const pathname = usePathname()
-
-    const phoneLink = data.contact_info.phone.replace(/[\s()\-]/g, '')
 
     return (
         <div
@@ -51,13 +49,13 @@ function NavigationList({ data }) {
                 </NavigationLink>
             </ul>
             <div className="flex flex-col gap-5 md:flex-row lg:gap-4 xl:gap-6">
-                <Button
+                {/* <Button
                     variant="orange"
                     href={`tel:${phoneLink}`}
                     restClass=" !px-5 !py-2.5 !font-normal !text-sm !md:text-xs !lg:text-sm md:hidden"
                 >
                     Zadzwoń do nas!
-                </Button>
+                </Button> */}
                 <Button
                     variant="orange"
                     href="/kontakt"

@@ -28,7 +28,7 @@ export default async function RootLayout({ children }) {
             <body
                 className={`${poppins.className} from-primary to-primary2 relative h-full min-h-screen bg-linear-to-r`}
             >
-                <Navigation data={data} />
+                <Navigation />
                 {children}
                 <Footer data={data} />
             </body>
