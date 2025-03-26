@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
     return (
         <html
             lang="pl"
-            className="scrollbar-thin scrollbar-track-primary scrollbar-thumb-primary2 overflow-x-hidden"
+            className="scrollbar-thin scrollbar-track-primary scrollbar-thumb-primary3 overflow-x-hidden"
         >
             <body
                 className={`${poppins.className} from-primary to-primary2 relative h-full min-h-screen bg-linear-to-r`}
