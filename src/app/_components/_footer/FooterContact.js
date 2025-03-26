@@ -1,5 +1,3 @@
-import { getFooter } from '../../lib/api'
-
 function FooterContact({ data }) {
     const contact = Object.entries(data.contact_info).splice(1, 4) || []
 
