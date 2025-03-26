@@ -5,7 +5,7 @@ import 'swiper/css/navigation'
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image'
 
-const API_URL = 'http://127.0.0.1:1337'
+const API_URL = 'https://matbud-backend.onrender.com'
 
 const ImageSlider = ({ images }) => {
     return (

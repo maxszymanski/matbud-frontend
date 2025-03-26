@@ -18,8 +18,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-    // const data = await getFooter()
-    const data = {}
+    const data = await getFooter()
 
     return (
         <html

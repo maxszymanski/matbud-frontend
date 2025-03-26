@@ -33,10 +33,10 @@ const services = [
     },
 ]
 
-function WhyUs() {
+function WhyUs({ about }) {
     return (
         <section className="container mx-auto flex flex-wrap items-stretch justify-center gap-20 px-6 py-18 xl:justify-evenly xl:gap-2 xl:px-2 xl:pt-24 xl:pb-36">
-            {services.map((item, i) => {
+            {about.map((item, i) => {
                 const icons = [
                     {
                         icon: (
@@ -60,7 +60,7 @@ function WhyUs() {
                         key={item.title}
                         icon={icons[i].icon}
                         title={item.title}
-                        list={item.service_list}
+                        list={item.service_card_item}
                     />
                 )
             })}

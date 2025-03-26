@@ -1,20 +1,10 @@
+import { getImages } from '../../lib/api'
 import Image from 'next/image'
 
-const images = [
-    '/image1.jpg',
-    '/image2.jpg',
-    '/image3.jpg',
-    '/image4.jpg',
-    '/image5.jpg',
-    '/image6.jpg',
-    '/image7.jpg',
-    '/image8.jpg',
-    '/image9.jpg',
-    '/image10.jpg',
-    '/image11.jpg',
-]
+const API_URL = 'https://matbud-backend.onrender.com'
 
-const Gallery = () => {
+const Gallery = async () => {
+    const images = await getImages()
     return (
         <section className="relative mx-auto px-6 py-16 lg:container lg:py-20">
             <div className="flex w-full flex-wrap items-center justify-evenly gap-x-2 gap-y-8 xl:justify-between 2xl:justify-evenly">
@@ -24,8 +14,7 @@ const Gallery = () => {
                         key={index}
                     >
                         <Image
-                            // src={`${API_URL}${img.url}`}
-                            src={img}
+                            src={`${API_URL}${img.url}`}
                             alt={`Zdjęcie ${index + 1}`}
                             fill
                             className="rounded-lg object-cover"

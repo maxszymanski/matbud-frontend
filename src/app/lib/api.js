@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = 'http://127.0.0.1:1337/api/'
+const API_URL = 'https://matbud-backend.onrender.com/api/'
 
 export async function getInfoSection() {
     try {
@@ -124,7 +124,7 @@ export async function getFooter() {
 export async function getServices() {
     try {
         const response = await axios.get(
-            `${API_URL}services?populate[service][populate][service_list]=*`
+            `${API_URL}services?populate[service][populate][service_list][populate][service_card_item][populate]=*`
         )
 
         if (
@@ -140,6 +140,28 @@ export async function getServices() {
         return data
     } catch (error) {
         console.error('Błąd pobierania sekcji sevices:', error.message || error)
+        return null
+    }
+}
+export async function getAbout() {
+    try {
+        const response = await axios.get(
+            `${API_URL}abouts?populate[about_info]=*&populate[why_us][populate]=service_card_item`
+        )
+
+        if (
+            !response.data ||
+            !response.data.data ||
+            !response.data.data.length
+        ) {
+            throw new Error('Brak danych w odpowiedzi API')
+        }
+
+        const data = response.data.data[0]
+
+        return data
+    } catch (error) {
+        console.error('Błąd pobierania sekcji o nas:', error.message || error)
         return null
     }
 }

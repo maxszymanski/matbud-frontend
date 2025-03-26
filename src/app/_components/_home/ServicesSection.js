@@ -28,7 +28,7 @@ async function ServicesSection() {
                         icon={icons[i].icon}
                         slug={item.slug}
                         title={item.title}
-                        list={item.service_list}
+                        list={item.service_list.service_card_item}
                     />
                 )
             })}
