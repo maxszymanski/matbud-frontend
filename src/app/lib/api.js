@@ -1,6 +1,7 @@
 import axios from 'axios'
-// const API_URL = 'https://matbud-backend.onrender.com/api/'
-export const API_URL = 'http://127.0.0.1:1337'
+// const API_URL = 'https://matbud-backend.onrender.com'
+// export const API_URL = 'http://127.0.0.1:1337'
+export const API_URL = 'https://matbud-backend-production.up.railway.app'
 
 export async function getInfoSection() {
     try {
