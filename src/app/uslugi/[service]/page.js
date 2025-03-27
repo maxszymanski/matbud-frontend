@@ -1,17 +1,30 @@
 import ContactForm from '../../_components/_contact/ContactForm'
+import ServicesSection from '../../_components/_home/ServicesSection'
 import ServicesInfo from '../../_components/_services/ServicesInfo'
 import MiniHeader from '../../_components/_ui/MiniHeader'
 import { getServices } from '../../lib/api'
 
-export const metadata = {
-    title: 'Budowa i konstrukcje',
-    description: 'Budowa i konstrukcje MatBud',
+export async function generateMetadata({ params }) {
+    const { title } = await await getServices(params.service)
+    return {
+        title: `${title}`,
+        description: `Zapoznaj się ze szczegółami naszej usługi - ${title}`,
+    }
+}
+
+export async function generateStaticParams() {
+    const services = await getServices()
+
+    const slugs = services.map((service) => ({
+        serviceSlug: service.slug,
+    }))
+
+    return slugs
 }
 
 async function SingleService({ params }) {
     const { service } = await params
-    const services = await getServices()
-    const singleService = services.filter((item) => item.slug === service)[0]
+    const singleService = await getServices(service)
     const serviceList = singleService.service_list.service_card_item
 
     return (
@@ -33,6 +46,7 @@ async function SingleService({ params }) {
                         <ContactForm />
                     </div>
                 </section>
+                <ServicesSection />
             </main>
         </>
     )

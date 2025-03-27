@@ -1,6 +1,5 @@
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import { getFooter } from './lib/api'
 import Navigation from './_components/_ui/Navigation'
 import Footer from './_components/_footer/Footer'
 
@@ -17,20 +16,18 @@ export const metadata = {
     description: 'Firma budowlana MatBud',
 }
 
-export default async function RootLayout({ children }) {
-    const data = await getFooter()
-
+export default function RootLayout({ children }) {
     return (
         <html
             lang="pl"
             className="scrollbar-thin scrollbar-track-primary scrollbar-thumb-primary3 overflow-x-hidden"
         >
             <body
-                className={`${poppins.className} from-primary to-primary2 relative h-full min-h-screen bg-linear-to-r`}
+                className={`${poppins.className} from-primary to-primary2 relative flex h-full min-h-screen flex-col bg-linear-to-r`}
             >
                 <Navigation />
                 {children}
-                <Footer data={data} />
+                <Footer />
             </body>
         </html>
     )

@@ -4,8 +4,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image'
-
-const API_URL = 'https://matbud-backend.onrender.com'
+import { API_URL } from '../../lib/api'
 
 const ImageSlider = ({ images }) => {
     return (
@@ -37,6 +36,7 @@ const ImageSlider = ({ images }) => {
                             alt={`Slide ${index + 1}`}
                             fill
                             className="rounded-lg object-cover"
+                            quality={70}
                         />
                     </div>
                 </SwiperSlide>

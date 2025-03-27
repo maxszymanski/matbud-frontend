@@ -7,16 +7,17 @@ function FooterContact({ data }) {
                 Kontakt
             </h4>
             <ul className="flex flex-col items-center sm:items-start">
-                {contact.map((link) => {
-                    return (
-                        <li
-                            key={link[0]}
-                            className={`${link[1] === null ? 'hidden' : ''}`}
-                        >
-                            <p className="mb-2 p-2">{link[1]}</p>
-                        </li>
-                    )
-                })}
+                {contact.length > 0 &&
+                    contact.map((link) => {
+                        return (
+                            <li
+                                key={link[0]}
+                                className={`${link[1] === null ? 'hidden' : ''}`}
+                            >
+                                <p className="mb-2 p-2">{link[1]}</p>
+                            </li>
+                        )
+                    })}
             </ul>
         </div>
     )

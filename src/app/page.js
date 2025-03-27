@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Footer from './_components/_footer/Footer'
 import Header from './_components/_home/Header'
 import JoinUsSection from './_components/_home/JoinUsSection'

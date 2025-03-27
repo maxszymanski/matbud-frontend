@@ -1,8 +1,12 @@
 import Link from 'next/link'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { getFooter } from '../../lib/api'
 
-function ContactInfo() {
+async function ContactInfo() {
+    const data = await getFooter()
+    const { email, phone } = data.contact_info
+    console.log(email, phone)
     return (
         <div className="text-second w-full pb-12 md:pt-6 md:pb-0 lg:w-1/2">
             <div className="text-second mx-auto w-full max-w-sm text-center text-sm lg:max-w-lg lg:text-base xl:max-w-[450px]">
@@ -21,17 +25,15 @@ function ContactInfo() {
             <div className="flex flex-col items-center gap-2.5 pt-6">
                 <Link
                     className="text-second hover:text-primary3 flex items-center gap-2 p-1.5 transition-colors"
-                    href="mailto:kontakt@matbud.pl"
+                    href={`mailto:${email}`}
                 >
-                    <MdEmail className="text-primary3 size-5" />{' '}
-                    kontakt@matbud.pl
+                    <MdEmail className="text-primary3 size-5" /> {email}
                 </Link>
                 <Link
                     className="text-second hover:text-primary3 flex items-center gap-2 p-1.5 transition-colors"
-                    href="tel:888888888"
+                    href={`tel:${phone.replace(/[\s()]/g, '')}`}
                 >
-                    <FaPhoneAlt className="text-primary3 size-5" /> +48 888 888
-                    888
+                    <FaPhoneAlt className="text-primary3 size-5" /> {phone}
                 </Link>
             </div>
         </div>

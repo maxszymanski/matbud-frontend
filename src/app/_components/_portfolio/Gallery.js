@@ -1,7 +1,5 @@
-import { getImages } from '../../lib/api'
+import { API_URL, getImages } from '../../lib/api'
 import Image from 'next/image'
-
-const API_URL = 'https://matbud-backend.onrender.com'
 
 const Gallery = async () => {
     const images = await getImages()
