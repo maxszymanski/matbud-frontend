@@ -11,7 +11,7 @@ const poppins = Poppins({
 export const metadata = {
     title: {
         template: 'MatBud | %s',
-        default: 'Firma Budowlana',
+        default: 'MatBud | Firma Budowlana',
     },
     description:
         'Profesjonalna firma budowlana w Małopolsce. Budowa domów, dachy, fundamenty, remonty i inne usługi budowlane. Solidność, terminowość i jakość.',
