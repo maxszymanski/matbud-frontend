@@ -9,7 +9,7 @@ export const revalidate = 3600
 export const metadata = {
     title: 'O nas',
     description:
-        '"Poznaj naszą firmę budowlaną. Jesteśmy ekspertami w budowie domów, dachach i remontach. Gwarantujemy wysoką jakość i terminowość realizacji.',
+        'Poznaj naszą firmę budowlaną. Jesteśmy ekspertami w budowie domów, dachach i remontach. Gwarantujemy wysoką jakość i terminowość realizacji.',
 }
 
 async function AboutUs() {
