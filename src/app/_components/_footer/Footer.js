@@ -2,8 +2,10 @@ import FooterNav from './FooterNav'
 import FooterContact from './FooterContact'
 import FooterSocial from './FooterSocial'
 import Link from 'next/link'
+import { getFooter } from '../../lib/api'
 
-async function Footer({ data }) {
+async function Footer() {
+    const data = await getFooter()
     return (
         <footer className="bg-primary2 px-6">
             <div className="container mx-auto">

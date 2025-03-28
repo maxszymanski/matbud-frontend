@@ -1,9 +1,13 @@
 import axios from 'axios'
-const API_URL = 'https://matbud-backend.onrender.com/api/'
+// const API_URL = 'https://matbud-backend.onrender.com'
+// export const API_URL = 'http://127.0.0.1:1337'
+export const API_URL = 'https://matbud-backend-production.up.railway.app'
 
 export async function getInfoSection() {
     try {
-        const response = await axios.get(`${API_URL}info-sections?populate=*`)
+        const response = await axios.get(
+            `${API_URL}/api/info-sections?populate=*`
+        )
 
         if (
             !response.data ||
@@ -23,7 +27,7 @@ export async function getInfoSection() {
 }
 export async function getHeader() {
     try {
-        const response = await axios.get(`${API_URL}headers?populate=*`)
+        const response = await axios.get(`${API_URL}/api/headers?populate=*`)
 
         if (
             !response.data ||
@@ -43,7 +47,7 @@ export async function getHeader() {
 }
 export async function getProfessionall() {
     try {
-        const response = await axios.get(`${API_URL}profs?populate=*`)
+        const response = await axios.get(`${API_URL}/api/profs?populate=*`)
 
         if (
             !response.data ||
@@ -63,7 +67,7 @@ export async function getProfessionall() {
 }
 export async function getNumbers() {
     try {
-        const response = await axios.get(`${API_URL}numbers?populate=*`)
+        const response = await axios.get(`${API_URL}/api/numbers?populate=*`)
 
         if (
             !response.data ||
@@ -83,7 +87,7 @@ export async function getNumbers() {
 }
 export async function getHire() {
     try {
-        const response = await axios.get(`${API_URL}hires?populate=*`)
+        const response = await axios.get(`${API_URL}/api/hires?populate=*`)
 
         if (
             !response.data ||
@@ -103,7 +107,7 @@ export async function getHire() {
 }
 export async function getFooter() {
     try {
-        const response = await axios.get(`${API_URL}footers?populate=*`)
+        const response = await axios.get(`${API_URL}/api/footers?populate=*`)
 
         if (
             !response.data ||
@@ -121,10 +125,10 @@ export async function getFooter() {
         return null
     }
 }
-export async function getServices() {
+export async function getServices(slug = undefined) {
     try {
         const response = await axios.get(
-            `${API_URL}services?populate[service][populate][service_list][populate][service_card_item][populate]=*`
+            `${API_URL}/api/services?populate[service][populate][service_list][populate][service_card_item][populate]=*`
         )
 
         if (
@@ -137,6 +141,10 @@ export async function getServices() {
 
         const data = response.data.data[0].service
 
+        if (slug) {
+            return data.filter((item) => item.slug === slug)[0]
+        }
+
         return data
     } catch (error) {
         console.error('Błąd pobierania sekcji sevices:', error.message || error)
@@ -146,7 +154,7 @@ export async function getServices() {
 export async function getAbout() {
     try {
         const response = await axios.get(
-            `${API_URL}abouts?populate[about_info]=*&populate[why_us][populate]=service_card_item`
+            `${API_URL}/api/abouts?populate[about_info]=*&populate[why_us][populate]=service_card_item`
         )
 
         if (
@@ -167,7 +175,9 @@ export async function getAbout() {
 }
 export async function getImages() {
     try {
-        const response = await axios.get(`${API_URL}realizations?populate=*`)
+        const response = await axios.get(
+            `${API_URL}/api/realizations?populate=*`
+        )
 
         if (
             !response.data ||

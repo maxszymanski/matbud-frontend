@@ -2,9 +2,12 @@ import ContactForm from '../_components/_contact/ContactForm'
 import ContactInfo from '../_components/_contact/ContactInfo'
 import MiniHeader from '../_components/_ui/MiniHeader'
 
+export const revalidate = 3600
+
 export const metadata = {
     title: 'Kontakt',
-    description: 'Kontakt MatBud',
+    description:
+        'Skontaktuj się z nami! Jesteśmy do dyspozycji w sprawie budowy, remontów i innych usług budowlanych. Zadzwoń lub napisz, chętnie pomożemy!',
 }
 
 function Contact() {

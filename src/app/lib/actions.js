@@ -11,7 +11,7 @@ export async function sendEmail(formData) {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: process.env.SMTP_PORT,
-        secure: false, // false dla STARTTLS
+        secure: false,
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
@@ -21,7 +21,7 @@ export async function sendEmail(formData) {
     try {
         await transporter.sendMail({
             from: `"${name}" <${email}>`,
-            to: process.env.SMTP_USER, // Twój e-mail
+            to: process.env.SMTP_USER,
             subject: `Nowa wiadomość z formularza kontaktowego od ${name}`,
             text: `Imię: ${name}\nTelefon: ${phone}\n\nWiadomość:\n${message}`,
             html: `<p><strong>Imię:</strong> ${name}</p><p><strong>Telefon:</strong> ${phone}</p><p>${message}</p>`,
