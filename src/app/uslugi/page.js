@@ -1,6 +1,8 @@
 import ServicesSection from '../_components/_home/ServicesSection'
 import MiniHeader from '../_components/_ui/MiniHeader'
 
+export const revalidate = 3600
+
 export const metadata = {
     title: 'Usługi',
     description: 'Usługi MatBud',

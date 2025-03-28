@@ -4,6 +4,8 @@ import ServicesInfo from '../../_components/_services/ServicesInfo'
 import MiniHeader from '../../_components/_ui/MiniHeader'
 import { getServices } from '../../lib/api'
 
+export const revalidate = 3600
+
 export async function generateMetadata({ params }) {
     const { title } = await await getServices(params.service)
     return {

@@ -8,6 +8,8 @@ import NumberSection from './_components/_home/NumberSection'
 import PortfolioSection from './_components/_home/PortfolioSection'
 import ServicesSection from './_components/_home/ServicesSection'
 
+export const revalidate = 3600
+
 async function Home() {
     return (
         <>
