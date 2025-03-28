@@ -9,7 +9,7 @@ function Policy() {
                         <br />
                         NIP: 5521723755
                         <br />
-                        kontakt@matbud.pl
+                        mateuszpena@interia.pl
                         <br />
                     </p>
                     <p className="py-3 font-semibold">
@@ -36,7 +36,7 @@ function Policy() {
                     <p className="py-4 leading-[160%] text-slate-300">
                         W razie jakichkolwiek pytań, prosimy o kontakt na adres
                         mailowy: <br />
-                        kontakt@matbud.pl <br />
+                        mateuszpena@interia.pl <br />
                     </p>
                 </div>
             </div>
