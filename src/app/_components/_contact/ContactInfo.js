@@ -6,7 +6,6 @@ import { getFooter } from '../../lib/api'
 async function ContactInfo() {
     const data = await getFooter()
     const { email, phone } = data.contact_info
-    console.log(email, phone)
     return (
         <div className="text-second w-full pb-12 md:pt-6 md:pb-0 lg:w-1/2">
             <div className="text-second mx-auto w-full max-w-sm text-center text-sm lg:max-w-lg lg:text-base xl:max-w-[450px]">
