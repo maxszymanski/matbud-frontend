@@ -8,7 +8,8 @@ export const revalidate = 3600
 
 export const metadata = {
     title: 'O nas',
-    description: 'O nas MatBud',
+    description:
+        '"Poznaj naszą firmę budowlaną. Jesteśmy ekspertami w budowie domów, dachach i remontach. Gwarantujemy wysoką jakość i terminowość realizacji.',
 }
 
 async function AboutUs() {

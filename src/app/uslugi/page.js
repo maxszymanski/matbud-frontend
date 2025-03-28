@@ -5,7 +5,8 @@ export const revalidate = 3600
 
 export const metadata = {
     title: 'Usługi',
-    description: 'Usługi MatBud',
+    description:
+        'Oferujemy kompleksowe usługi budowlane: budowa domów, dachów, fundamentów oraz inne prace budowlane. Sprawdź naszą ofertę i wybierz odpowiednią usługę.',
 }
 
 function ServicesPage() {

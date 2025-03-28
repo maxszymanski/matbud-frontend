@@ -11,9 +11,19 @@ const poppins = Poppins({
 export const metadata = {
     title: {
         template: 'MatBud | %s',
-        default: 'MatBud',
+        default: 'Firma Budowlana',
     },
-    description: 'Firma budowlana MatBud',
+    description:
+        'Profesjonalna firma budowlana w Małopolsce. Budowa domów, dachy, fundamenty, remonty i inne usługi budowlane. Solidność, terminowość i jakość.',
+    keywords: 'budowa, remonty, dachy, usługi budowlane',
+    openGraph: {
+        title: 'MatBud | Firma Budowlana',
+        description:
+            'Profesjonalna firma budowlana w Małopolsce. Budowa domów, dachy, fundamenty, remonty i inne usługi budowlane. Solidność, terminowość i jakość.',
+        url: 'https://matbudnet.pl',
+        image: 'https://matbudnet.pl/home-hero.webp',
+        type: 'website',
+    },
 }
 
 export default function RootLayout({ children }) {

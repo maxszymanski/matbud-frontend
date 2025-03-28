@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
     const { title } = await await getServices(params.service)
     return {
         title: `${title}`,
-        description: `Zapoznaj się ze szczegółami naszej usługi - ${title}`,
+        description: `Zapoznaj się ze szczegółami naszej usługi - ${title}.  Solidne wykonanie, terminowość i dbałość o detale.`,
     }
 }
 

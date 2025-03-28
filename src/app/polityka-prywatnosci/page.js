@@ -1,3 +1,9 @@
+export const metadata = {
+    title: 'Usługi',
+    description:
+        'Zapoznaj się z naszą polityką prywatności, aby dowiedzieć się, jak zbieramy, przechowujemy i chronimy Twoje dane osobowe w zgodzie z obowiązującymi przepisami.',
+}
+
 function Policy() {
     return (
         <main className="relative container mx-auto px-6 py-16 lg:py-20">
